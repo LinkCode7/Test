@@ -38,6 +38,7 @@
 *.opendb
 *.sdf
 .vs
+*.user
 Debug
 Release
 ipch

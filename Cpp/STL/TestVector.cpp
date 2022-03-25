@@ -54,6 +54,7 @@ void TestVectorPush();
 void TestMemoryGrowth();
 void TestMoveSemantic();
 void TestCapacity();
+void TestResize();
 
 
 #include <assert.h>
@@ -65,16 +66,18 @@ void RemoveAt(std::vector<T>& vec, int index)
 	vec.erase((vec.rbegin() + (vec.size() - index)).base());
 }
 
-void TestVector()
+TEST(TestVector, Base)
 {
 	TestVectorBase();
 	//TestVectorPush();
 	//TestMemoryGrowth();
 
 	TestMoveSemantic();
+
+	TestResize();
 	TestCapacity();
 
-	
+
 	vector<int> vec = {1,2,3,4,5,6};
 
 	//RemoveAt(vec, 2);
@@ -196,6 +199,51 @@ void TestCapacity()
 
 	vec.resize(0); // setLogicLength(0);
 	cout << "vector::capacity() = " << vec.capacity() << endl;
+
+
+	std::vector<int> arr;
+	for (int i = 0; i < 50; ++i)
+		arr.emplace_back(i);
+
+	cout << "arr.size = " << arr.size() << " | arr.capacity = " << arr.capacity() << endl;
+	arr.shrink_to_fit(); // 如果物理长度大于逻辑长度，使物理长度等于逻辑长度（减少内存占用）
+	cout << "arr.size = " << arr.size() << " | arr.capacity = " << arr.capacity() << endl;
+}
+
+// resize(count,)改变元素个数，count大于vector.size时，尾部追加，调用构造；小于时，从尾部开始删元素，物理长度不变，等于setLogicLength
+// reserve(new_cap)物理长度，new_cap大于vector.size才有效，等于setPhysicalLength
+void TestResize()
+{
+	std::vector<int> arr = { 1,2,3,4,5 };
+	cout << "arr.size = " << arr.size() << " | arr.capacity = " << arr.capacity() << endl;
+
+//#define TEST_RESIZE_GREATER
+
+#ifdef TEST_RESIZE_GREATER
+	arr.resize(6);
+#else
+	arr.resize(3);
+#endif
+	for (const auto& value : arr)
+		cout << value << ",";
+	cout << endl << "arr.size = " << arr.size() << " | arr.capacity = " << arr.capacity() << endl;
+
+
+	cout << endl << endl;
+
+	std::vector<int> arr2 = { 1,2,3,4,5 };
+	cout << "arr2.size = " << arr2.size() << " | arr2.capacity = " << arr2.capacity() << endl;
+
+#define TEST_RESERVE_GREATER
+
+#ifdef TEST_RESERVE_GREATER
+	arr2.reserve(6);
+#else
+	arr2.reserve(3);
+#endif
+	for (const auto& value : arr2)
+		cout << value << ",";
+	cout << endl << "arr2.size = " << arr2.size() << " | arr2.capacity = " << arr2.capacity() << endl;
 }
 
 void TestVectorBase()
