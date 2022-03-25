@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{AB9FEDA6-1368-4C4C-AC90-5766401F596F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Test</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\ExternalLib\boost_1_73_0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\ExternalLib\boost_1_73_0\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\ExternalLib\boost_1_73_0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\ExternalLib\boost_1_73_0\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>..\ExternalLib\boost_1_73_0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\ExternalLib\boost_1_73_0\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>..\ExternalLib\boost_1_73_0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\ExternalLib\boost_1_73_0\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Algorithm\algorithm.cpp" />
+    <ClCompile Include="Algorithm\serialize.cpp" />
+    <ClCompile Include="Algorithm\weekly.cpp" />
+    <ClCompile Include="Boost\boost.cpp" />
+    <ClCompile Include="Boost\boost_date_time.cpp" />
+    <ClCompile Include="Boost\boost_program_options.cpp" />
+    <ClCompile Include="Boost\boost_property_tree.cpp" />
+    <ClCompile Include="Boost\boost_random.cpp" />
+    <ClCompile Include="Boost\boost_split.cpp" />
+    <ClCompile Include="Boost\boost_string.cpp" />
+    <ClCompile Include="Boost\boost_variant.cpp" />
+    <ClCompile Include="Boost\FilesyStem\boost_filesystem.cpp" />
+    <ClCompile Include="Boost\FilesyStem\filesystem_util.cpp" />
+    <ClCompile Include="Boost\Graph\shortest_path.cpp" />
+    <ClCompile Include="Boost\Regex\regex_match.cpp" />
+    <ClCompile Include="Boost\Regex\regex_replace.cpp" />
+    <ClCompile Include="Boost\Regex\std_regex.cpp" />
+    <ClCompile Include="Boost\SpatialIndex\boost_spatial_index.cpp" />
+    <ClCompile Include="Boost\Vietnam.cpp" />
+    <ClCompile Include="Cpp\base.cpp" />
+    <ClCompile Include="Cpp\Basic\construct.cpp" />
+    <ClCompile Include="Cpp\Basic\delete.cpp" />
+    <ClCompile Include="Cpp\Basic\Inherit.cpp" />
+    <ClCompile Include="Cpp\Basic\operator.cpp" />
+    <ClCompile Include="Cpp\Basic\sizeof.cpp" />
+    <ClCompile Include="Cpp\Cpp0x\constexpr.cpp" />
+    <ClCompile Include="Cpp\Cpp0x\initializer_list.cpp" />
+    <ClCompile Include="Cpp\Cpp0x\lambda_experssion.cpp" />
+    <ClCompile Include="Cpp\Cpp0x\smart_point.cpp" />
+    <ClCompile Include="Cpp\Cpp0x\std_bind.cpp" />
+    <ClCompile Include="Cpp\Cpp0x\std_filesystem.cpp" />
+    <ClCompile Include="Cpp\Cpp0x\std_move.cpp" />
+    <ClCompile Include="Cpp\Cpp0x\std_thread.cpp" />
+    <ClCompile Include="Cpp\Cpp0x\std_tuple.cpp" />
+    <ClCompile Include="Cpp\Cpp0x\template.cpp" />
+    <ClCompile Include="Cpp\Cpp0x\type_index.cpp" />
+    <ClCompile Include="Cpp\Cpp0x\unordered_container.cpp" />
+    <ClCompile Include="Cpp\Cpp0x\Widget.cpp" />
+    <ClCompile Include="Cpp\iterator.cpp" />
+    <ClCompile Include="Cpp\Mechanism\vtable.cpp" />
+    <ClCompile Include="Cpp\petal.cpp" />
+    <ClCompile Include="Cpp\STL\KeyValue.cpp" />
+    <ClCompile Include="Cpp\STL\LFUCache.cpp" />
+    <ClCompile Include="Cpp\STL\List.cpp" />
+    <ClCompile Include="Cpp\STL\List_Iterator.cpp" />
+    <ClCompile Include="Cpp\STL\std_advance.cpp" />
+    <ClCompile Include="Cpp\STL\TemplateBaseClass.cpp" />
+    <ClCompile Include="Cpp\STL\TestMap.cpp" />
+    <ClCompile Include="Cpp\STL\TestVector.cpp" />
+    <ClCompile Include="Cpp\trace.cpp" />
+    <ClCompile Include="Cpp\virtual_function.cpp" />
+    <ClCompile Include="C\Fibonacci.cpp" />
+    <ClCompile Include="C\function.cpp" />
+    <ClCompile Include="C\Interview.cpp" />
+    <ClCompile Include="C\math.cpp" />
+    <ClCompile Include="C\OneWayLinkedList.cpp" />
+    <ClCompile Include="C\Point.cpp" />
+    <ClCompile Include="C\sort.cpp" />
+    <ClCompile Include="C\suspicious.cpp" />
+    <ClCompile Include="ESRI\ArcObject.cpp" />
+    <ClCompile Include="ESRI\GDAL.cpp" />
+    <ClCompile Include="ESRI\ShapeFile.cpp" />
+    <ClCompile Include="Graphical\IVSFlexGrid.cpp" />
+    <ClCompile Include="Other\competition2018.cpp" />
+    <ClCompile Include="Other\GetConfig.cpp" />
+    <ClCompile Include="Other\getDirectoryNames.cpp" />
+    <ClCompile Include="Other\keke.cpp" />
+    <ClCompile Include="Other\PmFunction.cpp" />
+    <ClCompile Include="Other\SmartPoint.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="String\c.cpp" />
+    <ClCompile Include="String\CStringExample.cpp" />
+    <ClCompile Include="String\CStringMember.cpp" />
+    <ClCompile Include="String\NoCaseWString.cpp" />
+    <ClCompile Include="String\string.cpp" />
+    <ClCompile Include="xtest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Algorithm\serialize.h" />
+    <ClInclude Include="Algorithm\weekly.h" />
+    <ClInclude Include="Boost\boost_date_time.h" />
+    <ClInclude Include="Boost\boost_program_options.h" />
+    <ClInclude Include="Boost\boost_property_tree.h" />
+    <ClInclude Include="Boost\boost_random.h" />
+    <ClInclude Include="Boost\boost_split.h" />
+    <ClInclude Include="Boost\boost_variant.h" />
+    <ClInclude Include="Boost\FilesyStem\boost_filesystem.h" />
+    <ClInclude Include="Boost\FilesyStem\filesystem_util.h" />
+    <ClInclude Include="Boost\Graph\shortest_path.h" />
+    <ClInclude Include="Boost\Regex\regex_match.h" />
+    <ClInclude Include="Boost\Regex\regex_replace.h" />
+    <ClInclude Include="Boost\Regex\std_regex.h" />
+    <ClInclude Include="Boost\SpatialIndex\boost_spatial_index.h" />
+    <ClInclude Include="Boost\Vietnam.h" />
+    <ClInclude Include="Cpp\base.h" />
+    <ClInclude Include="Cpp\Basic\construct.h" />
+    <ClInclude Include="Cpp\Basic\Inherit.h" />
+    <ClInclude Include="Cpp\Basic\operator.h" />
+    <ClInclude Include="Cpp\Basic\sizeof.h" />
+    <ClInclude Include="Cpp\Cpp0x\constexpr.h" />
+    <ClInclude Include="Cpp\Cpp0x\initializer_list.h" />
+    <ClInclude Include="Cpp\Cpp0x\lambda_experssion.h" />
+    <ClInclude Include="Cpp\Cpp0x\smart_point.h" />
+    <ClInclude Include="Cpp\Cpp0x\std_bind.h" />
+    <ClInclude Include="Cpp\Cpp0x\std_filesystem.h" />
+    <ClInclude Include="Cpp\Cpp0x\std_move.h" />
+    <ClInclude Include="Cpp\Cpp0x\std_thread.h" />
+    <ClInclude Include="Cpp\Cpp0x\std_tuple.h" />
+    <ClInclude Include="Cpp\Cpp0x\template.h" />
+    <ClInclude Include="Cpp\Cpp0x\type_index.h" />
+    <ClInclude Include="Cpp\Cpp0x\unordered_container.h" />
+    <ClInclude Include="Cpp\Mechanism\vtable.h" />
+    <ClInclude Include="Cpp\petal.h" />
+    <ClInclude Include="Cpp\STL\LFUCache.h" />
+    <ClInclude Include="Cpp\STL\List.h" />
+    <ClInclude Include="Cpp\STL\List_Iterator.h" />
+    <ClInclude Include="Cpp\STL\std_advance.h" />
+    <ClInclude Include="Cpp\STL\template_add.h" />
+    <ClInclude Include="Cpp\STL\TestMap.h" />
+    <ClInclude Include="Cpp\STL\TestVector.h" />
+    <ClInclude Include="Cpp\virtual_function.h" />
+    <ClInclude Include="C\Fibonacci.h" />
+    <ClInclude Include="C\function.h" />
+    <ClInclude Include="C\suspicious.h" />
+    <ClInclude Include="ESRI\ArcObject.h" />
+    <ClInclude Include="ESRI\GDAL.h" />
+    <ClInclude Include="Other\competition2018.h" />
+    <ClInclude Include="Other\GetConfig.h" />
+    <ClInclude Include="Other\keke.h" />
+    <ClInclude Include="Other\PmFunction.h" />
+    <ClInclude Include="Other\SmartPoint.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="String\NoCaseWString.h" />
+    <ClInclude Include="String\str_util.h" />
+    <ClInclude Include="xtest.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
