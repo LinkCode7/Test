@@ -4,7 +4,7 @@
 
 
 xtest::_Test::_Test(const std::string &n1, const std::string& n2) :test_case_name(n1), test_name(n2) {}
-void Output(const char* str, long color)
+void Output(const char* str, unsigned short color)
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | color);
 	std::cout << str;
@@ -20,17 +20,16 @@ void xtest::OutputGreen(const char* str)
 	Output(str, FOREGROUND_GREEN);
 }
 
-
-
 void xtest::UnitTest::Run()
 {
 	OutputGreen("[==========] Start Test...");
 	std::cout << std::endl;
-	for (auto it = begin(all_tests12); it != end(all_tests12); ++it)
+	for (const auto& pTest : all_case)
 	{
 		OutputGreen("[ RUN      ] ");
-		std::cout << (*it)->test_case_name << "." << (*it)->test_name << std::endl;
-		(*it)->testBody();
+		xtest::OutputGreen(std::string(pTest->test_case_name + "." + pTest->test_name + "\n").c_str());
+		//std::cout << pTest->test_case_name << "." << pTest->test_name << std::endl;
+		pTest->testBody();
 		std::cout << std::endl;
 	}
 }
@@ -42,7 +41,11 @@ void xtest::UnitTest::Run()
 
 
 
-
+#ifdef _LOOK_GOOGLE_TEST_MECHANISM
+TEST_MECHANISM(__TEST__, __test__)
+{
+}
+#endif
 
 
 TEST(Test, test1)

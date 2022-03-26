@@ -28,18 +28,18 @@
     }
 
 #define MAKE_CLASS_NAME(test_case_name, test_name)  MAKI_CLASS_NAME_I(test_case_name, test_name)
-#define MAKI_CLASS_NAME_I(test_case_name, test_name) XTest_##test_case_name##_##test_name##_Test
-#define XTEST_TEST(test_case_name,test_name) class MAKE_CLASS_NAME(test_case_name, test_name): \
-    public ::xtest::_Test { \
+#define MAKI_CLASS_NAME_I(test_case_name, test_name) XTest_##test_case_name##_##test_name##Test
+#define XTEST_TEST(test_case_name,test_name) class MAKE_CLASS_NAME(test_case_name, test_name): public ::xtest::_Test \
+{ \
     public: \
         MAKE_CLASS_NAME(test_case_name, test_name)(): ::xtest::_Test(#test_case_name, #test_name) \
         { \
             ::xtest::UnitTest::regist(std::shared_ptr<::xtest::_Test>(this)); \
         } \
-        virtual void testBody(); \
+        void testBody() override; \
         static MAKE_CLASS_NAME(test_case_name, test_name) * instance; \
 }; \
-MAKE_CLASS_NAME(test_case_name, test_name) * MAKE_CLASS_NAME(test_case_name, test_name) ::instance \
+MAKE_CLASS_NAME(test_case_name, test_name) * MAKE_CLASS_NAME(test_case_name, test_name)::instance \
     = new MAKE_CLASS_NAME(test_case_name, test_name) ();\
 void MAKE_CLASS_NAME(test_case_name, test_name)::testBody()
 
@@ -65,14 +65,14 @@ namespace xtest
 
 	class UnitTest
 	{
-		std::vector<std::shared_ptr<_Test>> all_tests12;
+		std::vector<std::shared_ptr<_Test>> all_case;
 	public:
 		static UnitTest& getInstance() {
 			static UnitTest opr;
 			return opr;
 		}
 		static void regist(std::shared_ptr<_Test> const& a) {
-			getInstance().all_tests12.push_back(a);
+			getInstance().all_case.push_back(a);
 		}
 		void Run();
 	};
@@ -86,8 +86,22 @@ namespace xtest
 
 
 
-//#define COLOR(msg, code) "\033[0;" #code "m" msg "\033[0m"
-//#define RED(msg)     COLOR(msg, 31)
-//#define GREEN(msg)   COLOR(msg, 32)
-//#define YELLOW(msg)  COLOR(msg, 33)
-//#define BLUE(msg)    COLOR(msg, 34)
+
+#define _LOOK_GOOGLE_TEST_MECHANISM
+
+#ifdef _LOOK_GOOGLE_TEST_MECHANISM
+#define TEST_MECHANISM(test_case_name, test_name) class _mechanism_ : public ::xtest::_Test\
+{\
+public:\
+	_mechanism_() : ::xtest::_Test(#test_case_name, #test_name)\
+	{\
+		::xtest::UnitTest::regist(std::shared_ptr<::xtest::_Test>(this));\
+	}\
+	static _mechanism_* _instance;\
+	void testBody() override;\
+};\
+_mechanism_* _mechanism_::_instance = new _mechanism_();\
+void _mechanism_::testBody()
+// 这下面就是函数体了{...}
+// key:静态对象的初始化在main之前
+#endif
