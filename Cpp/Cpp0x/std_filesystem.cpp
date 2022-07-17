@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include "std_filesystem.h"
 
 #include <filesystem> // C++17
@@ -20,9 +20,9 @@ void recursive_directory()
 	std::locale loc = std::locale::global(std::locale(std::locale(), "", LC_CTYPE));
 
 
-	const std::wstring dir = _T("E:\\");
+	const std::wstring dir = L"E:\\";
 	std::filesystem::path path("E:\\", loc);
-	//std::filesystem::path path(_T("E:\\"));
+	//std::filesystem::path path("E:\\");
 	//std::filesystem::path path = std::filesystem::u8path(u8"E:\\");
 
 	// filesystem抛出异常，可能是遇到系统不允许访问的文件，std::filesystem可以忽略异常

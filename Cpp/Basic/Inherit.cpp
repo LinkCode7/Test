@@ -1,34 +1,32 @@
 #include "pch.h"
-#include "Inherit.h"
+#include "inherit.h"
 
-void TestAbstractVirtualImpl();
-void TestMemsetVirtualClass();
-
-
-void TestCppInherit()
+TEST(inherit, normal)
 {
-	//LineData* pLine = new LineData;
-	//pLine->m_i = 1;
+	using namespace TestPoint;
 
-	TestAbstractVirtualImpl();
+	Point2d pt;
+	pt.x = 0;
+	pt.y = 0;
+	callPoint(pt);
 
-	TestMemsetVirtualClass();
+	MyPoint2d pt2(1, 1);
+	callPoint(pt2);
+	callPoint2(pt2);
+	callPoint3(pt2);
 }
 
-void TestAbstractVirtualImpl()
+void TestPoint::callPoint(Point2d pt)
 {
-	B* pa = new B; //zh
-	pa->exec();
-	delete pa;
+	Point2d pt2 = pt;
 }
 
-void TestMemsetVirtualClass()
+void TestPoint::callPoint2(Point2d& pt)
 {
-	return;
-	son s;
-	::memset(&s, 0, sizeof(s));
-
-	// son对象被置空，程序运行出错
-	parent& p = s;
-	p.output();
+	pt.x = 222;
+	pt.y = 222;
+}
+void TestPoint::callPoint3(const Point2d& pt)
+{
+	Point2d pt2 = pt;
 }

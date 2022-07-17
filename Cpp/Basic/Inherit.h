@@ -1,52 +1,27 @@
 #pragma once
 
 
-
-
-class ILineData
+namespace TestPoint
 {
-	ILineData() {} // ��ֹʵ������ռ�ռ�
-
-	void LineFunction()
+	// 第三方库使用的Point
+	struct Point2d
 	{
-		//std::cout << this->m_i << std::endl;
-	}
-};
+	public:
+		float x;
+		float y;
+	};
 
-
-class LineData:public ILineData
-{
-public:
-	int m_i;
-};
-
-
-
-
-struct A
-{
-	virtual void exec() = 0;
-};
-
-struct B : public A
-{
-	int i_ = 1;
-	virtual void exec()
+	// 派生出一个Point，强制实现构造函数，避免浮点数没初始化
+	class MyPoint2d : public Point2d
 	{
-		return;
-	}
-};
+	public:
+		MyPoint2d(float _x, float _y) /*: Point2d::x(_x), y(_y)*/
+		{
+			x = _x; y = _y;
+		}
+	};
 
-
-
-class parent
-{
-public:
-	virtual void output() { std::cout << "parent::output" << std::endl; }
-};
-
-class son: public parent
-{
-public:
-	virtual void output() { std::cout << "parent::son" << std::endl; }
-};
+	void callPoint(Point2d pt);
+	void callPoint2(Point2d& pt);
+	void callPoint3(const Point2d& pt);
+}

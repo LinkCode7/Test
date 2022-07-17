@@ -30,20 +30,20 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -228,8 +228,6 @@
     <ClCompile Include="ESRI\ShapeFile.cpp" />
     <ClCompile Include="Graphical\IVSFlexGrid.cpp" />
     <ClCompile Include="Other\competition2018.cpp" />
-    <ClCompile Include="Other\GetConfig.cpp" />
-    <ClCompile Include="Other\getDirectoryNames.cpp" />
     <ClCompile Include="Other\keke.cpp" />
     <ClCompile Include="Other\PmFunction.cpp" />
     <ClCompile Include="Other\SmartPoint.cpp" />
@@ -298,7 +296,6 @@
     <ClInclude Include="ESRI\ArcObject.h" />
     <ClInclude Include="ESRI\GDAL.h" />
     <ClInclude Include="Other\competition2018.h" />
-    <ClInclude Include="Other\GetConfig.h" />
     <ClInclude Include="Other\keke.h" />
     <ClInclude Include="Other\PmFunction.h" />
     <ClInclude Include="Other\SmartPoint.h" />

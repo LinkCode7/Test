@@ -17,7 +17,7 @@ void boost_variant_visitor();
 
 struct var_double_print :public boost::static_visitor<>
 {
-	// Ä£°å²ÎÊý
+	// Ä£ï¿½ï¿½ï¿½ï¿½ï¿½
 	template<typename T>
 	void operator()(T& t) const
 	{

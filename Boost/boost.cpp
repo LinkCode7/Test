@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 
 //#include <boost/thread.hpp>
 //#include <boost/thread/future.hpp>

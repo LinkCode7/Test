@@ -8,13 +8,13 @@ void bubble_sort(int num[], int size)
 {
 	int flag = 0;
 	int i, j, min;
-	for (i = 0; i<size -1; ++i)
+	for (i = 0; i < size - 1; ++i)
 	{
 		flag = 0;//如果有交换flag=1
 		///////////////////////////////////////////////////////////////
 		// 这段内层for循环代码，暂称为：代码X。
 		// 代码X执行一遍即：外层for循环走一次，内层for循环走size - i - 1次
-		for (j = 0; j<size - i - 1; ++j)
+		for (j = 0; j < size - i - 1; ++j)
 		{
 			// 第一次：1号元素和2号元素比较，更大的交换到右边
 			// 第二次：2和3比较，更大的放到右边
@@ -53,9 +53,9 @@ void quick_sort(int vec[], int leftIndex, int rightIndex)
 	const int low = leftIndex;
 	if (leftIndex >= rightIndex)// 出口
 		return;
-	while (leftIndex<rightIndex)
+	while (leftIndex < rightIndex)
 	{
-		if (vec[leftIndex]>vec[rightIndex])
+		if (vec[leftIndex] > vec[rightIndex])
 		{
 			swap(vec, leftIndex, rightIndex);
 
@@ -77,12 +77,12 @@ constexpr auto QUICK_MAX = 10000000;
 
 void testSort()
 {
-	if(!TestOpr.TestRand())
+	if (!TestOpr.TestRand())
 		return;
 
 	// 1
 	int array1[BUBBLE_MAX];
-	for (int j = 0; j<BUBBLE_MAX; ++j)
+	for (int j = 0; j < BUBBLE_MAX; ++j)
 	{
 		array1[j] = rand() % BUBBLE_MAX;
 	}
@@ -90,12 +90,12 @@ void testSort()
 
 	// 2
 	int* array2 = (int*)malloc(sizeof(int) * QUICK_MAX);
-	for (int j = 0; j<QUICK_MAX; ++j)
+	for (int j = 0; j < QUICK_MAX; ++j)
 	{
 		array2[j] = rand() % QUICK_MAX;
 	}
 	quick_sort(array2, 0, QUICK_MAX - 1);
-	
+
 	free(array2);
 }
 
@@ -115,6 +115,5 @@ void ContainerSort()
 	//std::sort(vec.begin(), vec.end(), std::greater<std::string>());
 
 
-
-	//std::map<std::string, std::string, std::greater<std::string>> mapValue = { {_T("a"),_T("1")},{_T("b"),_T("2")} };
+	std::map<std::string, std::string, std::greater<std::string>> mapValue = { {"a","1"},{"b","2"} };
 }

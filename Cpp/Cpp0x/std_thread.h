@@ -23,15 +23,15 @@ class ProducerConsumer
 	std::queue<int> produced_nums_;
 	std::mutex mtx_;
 	std::condition_variable condition_var_;
-	bool notified_ = false; // Í¨ÖªĞÅºÅ
+	bool notified_ = false; // é€šçŸ¥ä¿¡å·
 
 public:
 
 	void execute();
 
-	// Éú²úÕß
+	// ç”Ÿäº§è€…
 	void producer();
 
-	// Ïû·ÑÕß
+	// æ¶ˆè´¹è€…
 	void consumer();
 };

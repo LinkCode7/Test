@@ -147,12 +147,6 @@
     <ClCompile Include="Other\competition2018.cpp">
       <Filter>Other</Filter>
     </ClCompile>
-    <ClCompile Include="Other\GetConfig.cpp">
-      <Filter>Other</Filter>
-    </ClCompile>
-    <ClCompile Include="Other\getDirectoryNames.cpp">
-      <Filter>Other</Filter>
-    </ClCompile>
     <ClCompile Include="Other\keke.cpp">
       <Filter>Other</Filter>
     </ClCompile>
@@ -345,9 +339,6 @@
       <Filter>ESRI</Filter>
     </ClInclude>
     <ClInclude Include="Other\competition2018.h">
-      <Filter>Other</Filter>
-    </ClInclude>
-    <ClInclude Include="Other\GetConfig.h">
       <Filter>Other</Filter>
     </ClInclude>
     <ClInclude Include="Other\keke.h">
