@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include "virtual_function.h"
 
 #pragma warning(disable:4312)

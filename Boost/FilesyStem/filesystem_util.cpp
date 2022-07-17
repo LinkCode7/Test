@@ -20,9 +20,9 @@ void FileSystemSearchDirectory()
 
 	boost::filesystem::path path("C:\\Users\\Administrator\\Desktop\\7");
 
-	auto strDir = FindFile(path.string(), "×íĞ¡³Ç.doc");
+	auto strDir = FindFile(path.string(), "é†‰å°åŸ.doc");
 
-	// filesystemÅ×³öÒì³££¬¿ÉÄÜÊÇÓöµ½ÏµÍ³²»ÔÊĞí·ÃÎÊµÄÎÄ¼ş£¬std::filesystem¿ÉÒÔºöÂÔÒì³£
+	// filesystemæŠ›å‡ºå¼‚å¸¸ï¼Œå¯èƒ½æ˜¯é‡åˆ°ç³»ç»Ÿä¸å…è®¸è®¿é—®çš„æ–‡ä»¶ï¼Œstd::filesystemå¯ä»¥å¿½ç•¥å¼‚å¸¸
 	// https://stackoverflow.com/questions/52318249/the-stdfilesystemrecursive-directory-iterator-exception
 	//for (auto& el : std::filesystem::recursive_directory_iterator(dir, std::filesystem::directory_options::skip_permission_denied))
 	//{
@@ -32,7 +32,7 @@ void FileSystemSearchDirectory()
 	std::map<std::string, std::vector<std::string>> mapPath2Files;
 	{
 		boost::progress_timer t;
-		FindFileRegex("C:\\Users\\Administrator\\Desktop\\ĞÂ½¨ÎÄ¼ş¼Ğ", ".*\\.txt$", mapPath2Files);
+		FindFileRegex("C:\\Users\\Administrator\\Desktop\\æ–°å»ºæ–‡ä»¶å¤¹", ".*\\.txt$", mapPath2Files);
 	}
 }
 
@@ -52,11 +52,11 @@ std::string FindFile(const std::string& strDir, const std::string& strFile)
 
 	fd_iterator end;
 
-	// ±éÀúÄ¿Â¼ÏÂµÄÎÄ¼ş
+	// éå†ç›®å½•ä¸‹çš„æ–‡ä»¶
 	for (fd_iterator pos(strDir); pos != end; ++pos)
 	{
 		cout << pos->path() << endl;
-		if( !bf::is_directory(*pos) && strFile == pos->path().filename())
+		if (!bf::is_directory(*pos) && strFile == pos->path().filename())
 		{
 			return pos->path().parent_path().string();
 		}
@@ -65,7 +65,7 @@ std::string FindFile(const std::string& strDir, const std::string& strFile)
 	return std::string();
 }
 
-bool FindFileRegex(const std::string& strDir, const std::string& strRegex, std::map<std::string,std::vector<std::string>>& mapPath2Files)
+bool FindFileRegex(const std::string& strDir, const std::string& strRegex, std::map<std::string, std::vector<std::string>>& mapPath2Files)
 {
 	namespace bf = boost::filesystem;
 
@@ -79,7 +79,7 @@ bool FindFileRegex(const std::string& strDir, const std::string& strRegex, std::
 	boost::smatch what;
 	boost::regex reg(strRegex);
 
-	// ±éÀúÄ¿Â¼ÏÂµÄÎÄ¼ş
+	// éå†ç›®å½•ä¸‹çš„æ–‡ä»¶
 	//for (auto& el : std::filesystem::recursive_directory_iterator(dir, std::filesystem::directory_options::skip_permission_denied))
 
 	for (fd_iterator pos(strDir, bf::symlink_option::_detail_no_push); pos != end; ++pos)
@@ -89,7 +89,7 @@ bool FindFileRegex(const std::string& strDir, const std::string& strRegex, std::
 			bf::path pa = pos->path();
 
 			//if (boost::regex_match(pa.filename().string(), what, reg))
-			if(pa.filename().string().find(".txt") != std::string::npos)
+			if (pa.filename().string().find(".txt") != std::string::npos)
 			{
 				string strPath(pa.parent_path().string());
 
@@ -117,19 +117,19 @@ std::string FindFileOnePath(const std::string& strDir, const std::string& strFil
 	namespace bf = boost::filesystem;
 
 	if (!bf::exists(strDir) || !bf::is_directory(strDir))
-		return false;
+		return "";
 
 	typedef bf::recursive_directory_iterator fd_iterator;
 
 	fd_iterator end;
 
-	// ±éÀúÄ¿Â¼ÏÂµÄÎÄ¼ş
+	// éå†ç›®å½•ä¸‹çš„æ–‡ä»¶
 	for (fd_iterator pos(strDir); pos != end; ++pos)
 	{
 		cout << pos->path() << endl;
 		if (bf::is_directory(*pos))
 		{
-			// ²»±éÀúÆä×ÓÄ¿Â¼
+			// ä¸éå†å…¶å­ç›®å½•
 			pos.no_push();
 		}
 

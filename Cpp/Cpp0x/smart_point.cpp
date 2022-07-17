@@ -101,7 +101,7 @@ void test_my_shared_ptr()
 	cout << "get:" << pEgg.get() << "	" << "use_count:" << pEgg.use_count() << endl;
 }
 
-// shared_ptrµÄÈ±Ïİ
+// shared_ptrçš„ç¼ºé™·
 void test_shared_ptr_leak()
 {
 	//_USE_WEAK_PTR_
@@ -218,9 +218,9 @@ void test_smart_point20210808()
 void test_shared_ptr_function()
 {
 	auto pointer = std::make_shared<int>(10);
-	auto pointer2 = pointer; // ÒıÓÃ¼ÆÊı +1
-	auto pointer3 = pointer; // ÒıÓÃ¼ÆÊı +1
-	int* p = pointer.get(); // ÕâÑù²»»áÔö¼ÓÒıÓÃ¼ÆÊı
+	auto pointer2 = pointer; // å¼•ç”¨è®¡æ•° +1
+	auto pointer3 = pointer; // å¼•ç”¨è®¡æ•° +1
+	int* p = pointer.get(); // è¿™æ ·ä¸ä¼šå¢åŠ å¼•ç”¨è®¡æ•°
 	std::cout << "pointer.use_count() = " << pointer.use_count() << std::endl; // 3
 	std::cout << "pointer2.use_count() = " << pointer2.use_count() << std::endl; // 3
 	std::cout << "pointer3.use_count() = " << pointer3.use_count() << std::endl; // 3
@@ -228,12 +228,12 @@ void test_shared_ptr_function()
 	pointer2.reset();
 	std::cout << "reset pointer2:" << std::endl;
 	std::cout << "pointer.use_count() = " << pointer.use_count() << std::endl; // 2
-	std::cout << "pointer2.use_count() = " << pointer2.use_count() << std::endl; // 0, pointer2 ÒÑ reset
+	std::cout << "pointer2.use_count() = " << pointer2.use_count() << std::endl; // 0, pointer2 å·² reset
 	std::cout << "pointer3.use_count() = " << pointer3.use_count() << std::endl; // 2
 
 	pointer3.reset();
 	std::cout << "reset pointer3:" << std::endl;
 	std::cout << "pointer.use_count() = " << pointer.use_count() << std::endl; // 1
 	std::cout << "pointer2.use_count() = " << pointer2.use_count() << std::endl; // 0
-	std::cout << "pointer3.use_count() = " << pointer3.use_count() << std::endl; // 0, pointer3 ÒÑ reset
+	std::cout << "pointer3.use_count() = " << pointer3.use_count() << std::endl; // 0, pointer3 å·² reset
 }

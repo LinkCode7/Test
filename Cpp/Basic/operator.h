@@ -28,7 +28,7 @@ public:
 		return *this;
 	}
 
-	//bool operator<(const MyObject& oth) { return value_ < oth.value_; } // ¶ÔÖÇÄÜÖ¸ÕëÎÞÐ§
+	//bool operator<(const MyObject& oth) { return value_ < oth.value_; } // å¯¹æ™ºèƒ½æŒ‡é’ˆæ— æ•ˆ
 
 	int value_;
 };

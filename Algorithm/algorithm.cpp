@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-// ÅĞ¶ÏÒ»¸öÊıÊ±ºòÎª»ØÎÄÊı(121,12321,35653) 
+// åˆ¤æ–­ä¸€ä¸ªæ•°æ—¶å€™ä¸ºå›æ–‡æ•°(121,12321,35653) 
 //unsigned char Symmetry(long n)
 bool Symmetry(long n)
 {
@@ -11,7 +11,7 @@ bool Symmetry(long n)
 	//cout << "begin:		i: " << i << endl;
 	//cout << "        temp: " << temp << endl;
 
-	//while (i) //²»ÓÃ³öÏÖ³¤¶ÈÎÊÌâ,½«Êı°´¸ßµÍÎ»µô»»
+	//while (i) //ä¸ç”¨å‡ºç°é•¿åº¦é—®é¢˜,å°†æ•°æŒ‰é«˜ä½ä½æ‰æ¢
 	//{
 	//	temp = temp * 10 + i % 10;
 	//	i /= 10;

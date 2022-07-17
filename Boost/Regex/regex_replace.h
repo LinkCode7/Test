@@ -6,7 +6,7 @@
 
 
 
-// ¸ñÊ½»¯Æ÷
+// ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½
 struct Formater
 {
 	std::string operator()(boost::cmatch const & m) const;

@@ -6,7 +6,7 @@
 
 // create a typedef for the Graph type
 typedef std::pair<int, int> Edge;
-typedef boost::property<boost::edge_weight_t, int> EdgeWeightProperty; // 边的权重
+typedef boost::property<boost::edge_weight_t, int> EdgeWeightProperty; // 杈圭殑鏉冮噸
 
 // directedS,bidirectionalS
 typedef boost::adjacency_list<boost::vecS, boost::vecS, boost::directedS, boost::no_property, EdgeWeightProperty> Graph_t;
@@ -33,7 +33,7 @@ namespace BoostGraph
 	void TestVertex(Graph_t& graph);
 	void TestEdge(Graph_t& graph);
 
-	// 遍历所有顶点得out-edges
+	// 閬嶅巻鎵�鏈夐《鐐瑰緱out-edges
 	void TestVertexAdjacent(Graph_t& graph);
 
 	void TestGraphProperty(Graph_t& graph);
@@ -53,7 +53,7 @@ namespace BoostGraph
 		void operator()(const Vertex& v) const
 		{
 			typedef boost::graph_traits<Graph_t> GraphTraits;
-			typename property_map<Graph_t, boost::vertex_index_t>::type indexMap = get(boost::vertex_index, m_graph);
+			typename boost::property_map<Graph_t, boost::vertex_index_t>::type indexMap = get(boost::vertex_index, m_graph);
 
 			std::cout << "out-edges: ";
 			typename GraphTraits::out_edge_iterator out_i, out_end;
@@ -84,7 +84,7 @@ namespace BoostGraph
 			typedef typename boost::graph_traits<Graph> GraphTraits;
 			typename GraphTraits::in_edge_iterator in_i, in_end;
 
-			typename property_map<Graph_t, boost::vertex_index_t>::type indexMap = get(boost::vertex_index, m_graph);
+			typename boost::property_map<Graph_t, boost::vertex_index_t>::type indexMap = get(boost::vertex_index, m_graph);
 			typename GraphTraits::edge_descriptor e;
 
 			for (tie(in_i, in_end) = in_edges(v, m_graph); in_i != in_end; ++in_i)
@@ -107,11 +107,11 @@ namespace BoostGraph
 		typedef typename boost::graph_traits<Graph_t>::vertex_descriptor Vertex;
 		void operator()(const Vertex& v) const
 		{
-			typename property_map<Graph_t, boost::vertex_index_t>::type indexMap = get(boost::vertex_index, m_graph);
+			typename boost::property_map<Graph_t, boost::vertex_index_t>::type indexMap = get(boost::vertex_index, m_graph);
 
 			std::cout << "adjacent vertices: ";
-			typename graph_traits<Graph>::adjacency_iterator ai;
-			typename graph_traits<Graph>::adjacency_iterator ai_end;
+			typename boost::graph_traits<Graph>::adjacency_iterator ai;
+			typename boost::graph_traits<Graph>::adjacency_iterator ai_end;
 			for (tie(ai, ai_end) = adjacent_vertices(v, m_graph); ai != ai_end; ++ai)
 			{
 				std::cout << indexMap[*ai] << " ";
@@ -135,7 +135,7 @@ namespace BoostGraph
 	class record_predecessors : public boost::dijkstra_visitor<>
 	{
 	public:
-		record_predecessors(PredecessorMap p): m_predecessor(p) { }
+		record_predecessors(PredecessorMap p) : m_predecessor(p) { }
 
 		template <class Edge, class Graph>
 		void edge_relaxed(Edge e, Graph& g)

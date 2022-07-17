@@ -3,8 +3,8 @@
 
 
 
-// 随机数发生器
+// 闅忔満鏁板彂鐢熷櫒
 void random_generator();
 
-// 随机数分布器
+// 闅忔満鏁板垎甯冨櫒
 void random_distribution();

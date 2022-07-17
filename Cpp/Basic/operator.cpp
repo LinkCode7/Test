@@ -40,7 +40,7 @@ void testCompareSharedPtr()
 
 	std::sort(arrObject.begin(), arrObject.end(), [&](const MyObjectPtr& left, const MyObjectPtr& right)
 	{
-		return left->value_ < right->value_; // ×Ô¶¯ÍÆµ¼·µ»ØÖµÀàÐÍ
+		return left->value_ < right->value_; // è‡ªåŠ¨æŽ¨å¯¼è¿”å›žå€¼ç±»åž‹
 	});
 }
 

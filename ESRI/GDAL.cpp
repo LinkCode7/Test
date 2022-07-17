@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 
 #if(_MSC_VER == _VERSION_VS2015_)
 

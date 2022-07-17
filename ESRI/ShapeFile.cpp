@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 //#include "D:\gdal-1.5.0\ogr\ogrsf_frmts\ogrsf_frmts.h"
 
 

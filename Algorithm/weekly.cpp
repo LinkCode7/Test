@@ -87,7 +87,7 @@ int CheckSame(const vector<int> &nums, size_t index, int target)
 	return index;
 }
 
-// ¶ş·Ö²éÕÒ
+// äºŒåˆ†æŸ¥æ‰¾
 int binarySearch(vector<int> &nums, int target)
 {
 	size_t right = nums.size();
@@ -100,7 +100,7 @@ int binarySearch(vector<int> &nums, int target)
 		int iValue = nums.at(index);
 		if (iValue == target)
 		{
-			// "3,4,5,8,8,8,8,10"Òª·µ»Ø3
+			// "3,4,5,8,8,8,8,10"è¦è¿”å›3
 			return CheckSame(nums, index, target);
 		}
 		else if (target < iValue)
@@ -335,7 +335,7 @@ vector<int> mergeSortedArray(vector<int> &A, vector<int> &B)
 
 
 	int iAMin = *(A.begin());
-	int iAMax = *(A.begin() + iSizeA - 1); // STLµü´úÆ÷×ó±ÕÓÒ¿ª
+	int iAMax = *(A.begin() + iSizeA - 1); // STLè¿­ä»£å™¨å·¦é—­å³å¼€
 
 	int iBMin = *(B.begin());
 	int iBMax = *(B.begin() + iSizeB - 1);

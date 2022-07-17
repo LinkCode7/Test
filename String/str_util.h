@@ -21,7 +21,7 @@ inline std::string join(const T& target, const std::string& join_char)
 
 
 
-// STL±ê×¼ÈÝÆ÷
+// STLï¿½ï¿½×¼ï¿½ï¿½ï¿½ï¿½
 template<typename Container>
 std::string GetString(const Container& c, const std::string& strSplit = ";", bool isCheckEmpty = true)
 {

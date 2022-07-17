@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include "regex_replace.h"
 
 #pragma warning(disable:4996)

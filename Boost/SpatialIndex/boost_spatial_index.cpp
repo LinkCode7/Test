@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "boost_spatial_index.h"
 
-#pragma warning(disable:4819) // boost±àÒë¾¯¸æ
+#pragma warning(disable:4819) // boostï¿½ï¿½ï¿½ë¾¯ï¿½ï¿½
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point.hpp>
 #include <boost/geometry/geometries/box.hpp>

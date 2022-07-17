@@ -22,11 +22,11 @@ void test_tuple()
 auto get_student(int id)
 {
 	if (id == 0)
-		return std::make_tuple(3.8, 'A', "ÕÅÈı");
+		return std::make_tuple(3.8, 'A', "å¼ ä¸‰");
 	else if (id == 1)
-		return std::make_tuple(2.9, 'C', "ÀîËÄ");
+		return std::make_tuple(2.9, 'C', "æå››");
 	else if (id == 2)
-		return std::make_tuple(1.7, 'D', "ÍõÎå");
+		return std::make_tuple(1.7, 'D', "ç‹äº”");
 
 	return std::make_tuple(0.0, 'D', "null");
 }
@@ -38,23 +38,23 @@ void how_to_use_tuple()
 	std::cout << typeid(std::get<1>(student)).name() << std::endl;
 	std::cout << typeid(std::get<2>(student)).name() << std::endl;
 
-	// get<index>»ñÈ¡Öµ
+	// get<index>è·å–å€¼
 	std::cout << "ID: 1, GPA: " << std::get<0>(student);
-	std::cout << ", ³É¼¨: " << std::get<1>(student) << ", ĞÕÃû: " << std::get<2>(student) << '\n';
+	std::cout << ", æˆç»©: " << std::get<1>(student) << ", å§“å: " << std::get<2>(student) << '\n';
 
-	// get<type>»ñÈ¡Öµ
+	// get<type>è·å–å€¼
 	std::cout << std::endl;
 	std::cout << "ID: 1, GPA: " << std::get<double>(student);
-	std::cout << ", ³É¼¨: " << std::get<char>(student) << ", ĞÕÃû: " << std::get<const char*>(student) << '\n';
+	std::cout << ", æˆç»©: " << std::get<char>(student) << ", å§“å: " << std::get<const char*>(student) << '\n';
 
-	// Ôª×é½øĞĞ²ğ°ü
+	// å…ƒç»„è¿›è¡Œæ‹†åŒ…
 	double gpa;
 	char grade;
 	std::string name;
 	std::tie(gpa, grade, name) = get_student(1);
 
 	std::cout << std::endl << std::endl << std::endl;
-	std::cout << "ID: 1, GPA: " << gpa << ", ³É¼¨: " << grade << ", ĞÕÃû: " << name << '\n';
+	std::cout << "ID: 1, GPA: " << gpa << ", æˆç»©: " << grade << ", å§“å: " << name << '\n';
 }
 
 void about_variant()
@@ -70,13 +70,13 @@ void about_variant()
 	//std::cout << tuple_index(values, 1) << std::endl;
 
 
-	// ºÏ²¢Á½¸öÔª×é
+	// åˆå¹¶ä¸¤ä¸ªå…ƒç»„
 	auto new_tuple = std::tuple_cat(get_student(1), std::move(values));
 
-	// µü´ú
+	// è¿­ä»£
 	for (int i = 0; i != tuple_len(new_tuple); ++i)
 	{
-		// ÔËĞĞÆÚË÷Òı
+		// è¿è¡ŒæœŸç´¢å¼•
 		std::cout << tuple_index(new_tuple, i) << std::endl;
 	}
 }

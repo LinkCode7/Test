@@ -27,7 +27,7 @@
 
 
 
-//#define GTEST_LANG_CXX11 1 // GTest编译问题...
+//#define GTEST_LANG_CXX11 1 // GTest缂栬瘧闂...
 //#include "gtest/gtest.h"
 #include "xtest.h"
 
@@ -70,5 +70,5 @@ public:
 #define TestOpr TestOperator::instance()
 
 
-// GDAL库只编译了VS2015版本
+// GDAL搴撳彧缂栬瘧浜哣S2015鐗堟湰
 #define _VERSION_VS2015_ 1900

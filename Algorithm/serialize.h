@@ -33,7 +33,7 @@ namespace BinaryTreeSerialize
 	void SetNode(TreeNode* pNode, int iValue, bool hasLeftValue, bool hasRightValue);
 	void _deserialize(const std::vector<std::string>& vecRow, int index, std::vector<TreeNode*>& vecLastNode);
 
-	// ²âÊÔºó¼ÇµÃÊÍ·Å
+	// ï¿½ï¿½ï¿½Ôºï¿½Çµï¿½ï¿½Í·ï¿½
 	TreeNode * deserialize(std::string &data);
 
 

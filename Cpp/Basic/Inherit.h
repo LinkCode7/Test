@@ -5,7 +5,7 @@
 
 class ILineData
 {
-	ILineData() {} // ½ûÖ¹ÊµÀý£¬²»Õ¼¿Õ¼ä
+	ILineData() {} // ï¿½ï¿½Ö¹Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½Õ¼ï¿½
 
 	void LineFunction()
 	{

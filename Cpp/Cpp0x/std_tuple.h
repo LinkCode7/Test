@@ -5,7 +5,7 @@
 
 void how_to_use_tuple();
 
-// variant可以容纳的几种类型的变量
+// variant鍙互瀹圭撼鐨勫嚑绉嶇被鍨嬬殑鍙橀噺
 void about_variant();
 
 
@@ -14,7 +14,7 @@ template <size_t n, typename... T>
 constexpr std::variant<T...> _tuple_index(const std::tuple<T...>& tpl, size_t i)
 {
 	if constexpr (n >= sizeof...(T))
-		throw std::out_of_range(" 越界.");
+		throw std::out_of_range(" 瓒婄晫.");
 	if (i == n)
 		return std::variant<T...>{ std::in_place_index<n>, std::get<n>(tpl) };
 	return _tuple_index<(n < sizeof...(T) - 1 ? n + 1 : 0)>(tpl, i);

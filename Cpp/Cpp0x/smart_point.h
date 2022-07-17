@@ -179,7 +179,7 @@ class Ptr
 		}
 	}
 public:
-	//¹¹Ôìº¯Êı  
+	//æ„é€ å‡½æ•°  
 	Ptr(T* p = 0) : _ptr(p), _reference_count(new size_t)
 	{
 		if (p)
@@ -187,7 +187,7 @@ public:
 		else
 			*_reference_count = 0;
 	}
-	//¿½±´¹¹Ôìº¯Êı  
+	//æ‹·è´æ„é€ å‡½æ•°  
 	Ptr(const Ptr& src)
 	{
 		if (this != &src)
@@ -197,7 +197,7 @@ public:
 			(*_reference_count)++;
 		}
 	}
-	//ÖØÔØ¸³Öµ²Ù×÷·û  
+	//é‡è½½èµ‹å€¼æ“ä½œç¬¦  
 	Ptr& operator=(const Ptr& src)
 	{
 		if (_ptr == src._ptr)
@@ -210,7 +210,7 @@ public:
 		return *this;
 	}
 
-	//ÖØÔØ²Ù×÷·û
+	//é‡è½½æ“ä½œç¬¦
 	T& operator*()
 	{
 		if (_ptr)
@@ -218,7 +218,7 @@ public:
 
 		//throw exception  
 	}
-	//ÖØÔØ²Ù×÷·û
+	//é‡è½½æ“ä½œç¬¦
 	T* operator->()
 	{
 		if (_ptr)
@@ -226,7 +226,7 @@ public:
 
 		//throw exception  
 	}
-	//Îö¹¹º¯Êı
+	//ææ„å‡½æ•°
 	~Ptr()
 	{
 		if (--(*_reference_count) == 0)

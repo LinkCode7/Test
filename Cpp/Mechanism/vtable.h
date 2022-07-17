@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <iostream>
 
 #pragma warning(disable:4312)

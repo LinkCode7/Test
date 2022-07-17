@@ -23,34 +23,34 @@
     <ProjectGuid>{AB9FEDA6-1368-4C4C-AC90-5766401F596F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Test</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -72,23 +72,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\ExternalLib\boost_1_73_0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\ExternalLib\boost_1_73_0\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\ExternalLib\boost_1_79_0\boost;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\ExternalLib\boost_1_79_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\ExternalLib\boost_1_73_0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\ExternalLib\boost_1_73_0\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\ExternalLib\boost_1_79_0;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\ExternalLib\boost_1_79_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\ExternalLib\boost_1_73_0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\ExternalLib\boost_1_73_0\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\ExternalLib\boost_1_79_0\boost;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\ExternalLib\boost_1_79_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\ExternalLib\boost_1_73_0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\ExternalLib\boost_1_73_0\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\ExternalLib\boost_1_79_0\boost;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\ExternalLib\boost_1_79_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -187,6 +187,7 @@
     <ClCompile Include="Cpp\Basic\delete.cpp" />
     <ClCompile Include="Cpp\Basic\Inherit.cpp" />
     <ClCompile Include="Cpp\Basic\operator.cpp" />
+    <ClCompile Include="Cpp\Basic\polymorphism.cpp" />
     <ClCompile Include="Cpp\Basic\sizeof.cpp" />
     <ClCompile Include="Cpp\Cpp0x\constexpr.cpp" />
     <ClCompile Include="Cpp\Cpp0x\initializer_list.cpp" />
@@ -267,6 +268,7 @@
     <ClInclude Include="Cpp\Basic\construct.h" />
     <ClInclude Include="Cpp\Basic\Inherit.h" />
     <ClInclude Include="Cpp\Basic\operator.h" />
+    <ClInclude Include="Cpp\Basic\polymorphism.h" />
     <ClInclude Include="Cpp\Basic\sizeof.h" />
     <ClInclude Include="Cpp\Cpp0x\constexpr.h" />
     <ClInclude Include="Cpp\Cpp0x\initializer_list.h" />

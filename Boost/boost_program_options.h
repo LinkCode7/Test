@@ -2,8 +2,8 @@
 
 
 /*
-·ÖÎöÆ÷
-parse_command_line¡¢parse_config_file¡¢parse_environment(ÄÚ²¿command_line_parser)
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+parse_command_lineï¿½ï¿½parse_config_fileï¿½ï¿½parse_environment(ï¿½Ú²ï¿½command_line_parser)
 */
 
 

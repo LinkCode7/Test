@@ -10,7 +10,7 @@ using namespace std;
 
 
 ///////////////////////////////////////////////////////////////////////
-// ExceptionC++ 条款2-3 不区分大小写的string
+// ExceptionC++ 鏉℃2-3 涓嶅尯鍒嗗ぇ灏忓啓鐨剆tring
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -61,7 +61,7 @@ void exception_cpp()
 {
 	testException();
 
-	// 条款2-3 不区分大小写的string
+	// 鏉℃2-3 涓嶅尯鍒嗗ぇ灏忓啓鐨剆tring
 	string str = "a";
 	if (str == "A")
 		cout << "stringIs equal" << endl;
