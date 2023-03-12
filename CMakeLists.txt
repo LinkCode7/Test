@@ -1,10 +1,10 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.12)
 project(Test)
 
 set(CMAKE_CXX_STANDARD 17)
 
 # 要测试boost库，请指定头文件、库的路径
-# set(TEST_BOOST_RTREE ON)
+set(TEST_BOOST_RTREE OFF)
 
 if(TEST_BOOST_RTREE)
 set(Boost_INCLUDE_DIR ../boost_1_79_0)
