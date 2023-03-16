@@ -1,5 +1,6 @@
 #include "pch.h"
-#include "assert.h"
+#include "floating_number.h"
+#include <cassert>
 
 using std::cout;
 using std::endl;
@@ -123,4 +124,52 @@ TEST(floating, convert_to_amount)
 {
 	assert(convert_to_amount(3.14) == "叁元壹角肆分");
 	// assert(convert_to_amount(12345678.009) == "叁元壹角肆分");
+}
+
+TEST(floating, get_digit)
+{
+	assert(is_same_container(get_every_digit(123456), { 6,5,4,3,2,1 }));
+	assert(is_same_container(get_every_digit(0), {0}));
+
+	// 负数...
+	assert(is_same_container(get_every_digit(-1), { -1 }));
+	assert(is_same_container(get_every_digit(-123), { -3,-2,-1 }));
+	assert(is_same_container(get_every_digit(-654), { -4,-5,-6 }));
+}
+
+/*
+* 关于取整：
+* trunc：向0取整
+* floor：向-∞取整
+* ceil：向+∞取整
+* round：四舍五入取整
+*/
+TEST(floating, rounding)
+{
+	// 向0取整
+	int i = -2.9;  // -2
+	int j = 2.9;   // 2
+	printf("%d\n", i);  // 输出-2
+	printf("%d\n", j);  // 输出2
+
+	const char* format = "%.1f \t%.1f \t%.1f \t%.1f \t%.1f\n";
+	printf("value\tround\tfloor\tceil\ttrunc\n");
+	printf("-----\t-----\t-----\t----\t-----\n");
+
+	printf(format, 2.3, round(2.3), floor(2.3), ceil(2.3), trunc(2.3));
+	printf(format, 3.8, round(3.8), floor(3.8), ceil(3.8), trunc(3.8));
+	printf(format, 5.5, round(5.5), floor(5.5), ceil(5.5), trunc(5.5));
+	printf(format, -2.3, round(-2.3), floor(-2.3), ceil(-2.3), trunc(-2.3));
+	printf(format, -3.8, round(-3.8), floor(-3.8), ceil(-3.8), trunc(-3.8));
+	printf(format, -5.5, round(-5.5), floor(-5.5), ceil(-5.5), trunc(-5.5));
+	/*
+		value   round   floor   ceil    trunc
+		-----   -----   -----   ----    -----
+		2.3     2.0     2.0     3.0     2.0
+		3.8     4.0     3.0     4.0     3.0
+		5.5     6.0     5.0     6.0     5.0
+		-2.3    -2.0    -3.0    -2.0    -2.0
+		-3.8    -4.0    -4.0    -3.0    -3.0
+		-5.5    -6.0    -6.0    -5.0    -5.0
+	*/
 }
