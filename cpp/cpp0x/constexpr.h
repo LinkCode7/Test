@@ -1,11 +1,5 @@
 #pragma once
 
-
-void about_const();
-void if_constexpr();
-
-
-
 constexpr int fibonacci(int index)
 {
 	return (index == 1 || index == 2) ? 1 : fibonacci(index - 1) + fibonacci(index - 2);

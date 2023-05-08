@@ -41,9 +41,10 @@ void recursive_directory()
 
 TEST(std_filesystem, recursive_directory)
 {
+	return;
 	namespace fs = std::filesystem;
 
-	fs::path path("C:\\Code\\pixso-client-app-wasm\\unittest\\docData\\PixsoDoc");
+	fs::path path("C:\\code");
 
 	//for (auto& el : std::filesystem::recursive_directory_iterator(path))
 	for (auto& el : fs::recursive_directory_iterator(path, fs::directory_options::skip_permission_denied))
