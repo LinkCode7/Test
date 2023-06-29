@@ -1,6 +1,6 @@
 ﻿#include "pch.h"
 
-#define TEST_STD_THREAD // 多线程测试
+//#define TEST_STD_THREAD // 多线程测试
 #ifdef TEST_STD_THREAD
     #include "cpp/cpp0x/std_thread.h"
 #endif

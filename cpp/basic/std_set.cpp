@@ -214,3 +214,28 @@ TEST(std_bitset, cppreference)
     assert(b3.to_ullong() == 0b0100ULL);
     assert(b3.to_string() == "0100");
 }
+
+TEST(std_hash, string_int)
+{
+    size_t str = std::hash<std::string>()("");
+    assert(str == 14695981039346656037);
+
+    size_t str_a = std::hash<std::string>()("a");
+    assert(str_a == 12638187200555641996);
+
+    size_t str_b = std::hash<std::string>()("b");
+    assert(str_b == 12638190499090526629);
+
+    size_t str_0 = std::hash<std::string>()("0");
+    assert(str_0 == 12638135523509116079);
+
+    size_t str_1 = std::hash<std::string>()("1");
+    assert(str_1 == 12638134423997487868);
+
+    // int
+    size_t int0 = std::hash<int>()(0);
+    assert(int0 == 5558979605539197941);
+
+    size_t int1 = std::hash<int>()(1);
+    assert(int1 == 12478008331234465636);
+}
