@@ -1,75 +1,68 @@
-﻿#include "pch.h"
-#include "LFUCache.h"
+﻿#include "LFUCache.h"
 
 #include <algorithm>
 
-
-
 using namespace std;
-
-
-
 
 //////////////////////////////////////////////////////////////////////////
 
 void LFUCacheEntry()
 {
-	WrongAnswer();
-	return;
+    WrongAnswer();
+    return;
 
-	LFUCache lfu(3);
+    LFUCache lfu(3);
 
-	lfu.set(2, 2);
-	lfu.set(1, 1);
+    lfu.set(2, 2);
+    lfu.set(1, 1);
 
-	cout << lfu.get(2) << endl;
+    cout << lfu.get(2) << endl;
 
-	cout << lfu.get(1) << endl;
+    cout << lfu.get(1) << endl;
 
-	cout << lfu.get(2) << endl;
+    cout << lfu.get(2) << endl;
 
-	lfu.set(3, 3);
-	bool isOk = is_heap(lfu.m_vec.begin(), lfu.m_vec.end(), std::greater<>());
-	lfu.set(4, 4);
+    lfu.set(3, 3);
+    bool isOk = is_heap(lfu.m_vec.begin(), lfu.m_vec.end(), std::greater<>());
+    lfu.set(4, 4);
 
-	cout << lfu.get(3) << endl;
+    cout << lfu.get(3) << endl;
 
-	cout << lfu.get(2) << endl;
+    cout << lfu.get(2) << endl;
 
-	cout << lfu.get(1) << endl;
+    cout << lfu.get(1) << endl;
 
-	cout << lfu.get(4) << endl;
+    cout << lfu.get(4) << endl;
 }
 
 // 调用set且需要从容器中取出一个元素时，此时若存在相同元素，会取出先push_back的
 void WrongAnswer()
 {
-	return;
+    return;
 
-	LFUCache lfu(3);
-	lfu.set(1, 10);
-	lfu.set(2, 20);
-	lfu.set(3, 30);
+    LFUCache lfu(3);
+    lfu.set(1, 10);
+    lfu.set(2, 20);
+    lfu.set(3, 30);
 
-	cout << lfu.get(1) << endl << endl;
+    cout << lfu.get(1) << endl << endl;
 
-	lfu.set(4, 40);
+    lfu.set(4, 40);
 
-	cout << lfu.get(4) << endl;
-	cout << lfu.get(3) << endl;
-	cout << lfu.get(2) << endl;
-	cout << lfu.get(1) << endl << endl;
+    cout << lfu.get(4) << endl;
+    cout << lfu.get(3) << endl;
+    cout << lfu.get(2) << endl;
+    cout << lfu.get(1) << endl << endl;
 
-	bool isOk = is_heap(lfu.m_vec.begin(), lfu.m_vec.end(), std::greater<>());
-	lfu.set(5, 50);
+    bool isOk = is_heap(lfu.m_vec.begin(), lfu.m_vec.end(), std::greater<>());
+    lfu.set(5, 50);
 
-	cout << lfu.get(1) << endl;
-	cout << lfu.get(2) << endl;
-	cout << lfu.get(3) << endl;
-	cout << lfu.get(4) << endl;
-	cout << lfu.get(5) << endl;
+    cout << lfu.get(1) << endl;
+    cout << lfu.get(2) << endl;
+    cout << lfu.get(3) << endl;
+    cout << lfu.get(4) << endl;
+    cout << lfu.get(5) << endl;
 }
-
 
 //报错：expression:invalid heap
 //
@@ -78,42 +71,39 @@ void WrongAnswer()
 
 void Exception()
 {
-	vector<int> vecTest = { 0,1,2,3,4,8,9,3,5 };
-	make_heap(vecTest.begin(), vecTest.end());
+    vector<int> vecTest = {0, 1, 2, 3, 4, 8, 9, 3, 5};
+    make_heap(vecTest.begin(), vecTest.end());
 
-	vecTest.push_back(7);
-	push_heap(vecTest.begin(), vecTest.end());
+    vecTest.push_back(7);
+    push_heap(vecTest.begin(), vecTest.end());
 
-	pop_heap(vecTest.begin(), vecTest.end());
-	vecTest.pop_back(); //
+    pop_heap(vecTest.begin(), vecTest.end());
+    vecTest.pop_back(); //
 
-	sort_heap(vecTest.begin(), vecTest.end()); // Exception
+    sort_heap(vecTest.begin(), vecTest.end()); // Exception
 }
-
-
-
-
-
 
 class File
 {
 public:
-	virtual void open() {};
-	virtual void close() {};
+    virtual void open(){};
+    virtual void close(){};
 
-	File() {
-		std::cout << "File Constructor" << std::endl;
-		open(); // 此时子类未构造出来
-	}
+    File()
+    {
+        std::cout << "File Constructor" << std::endl;
+        open(); // 此时子类未构造出来
+    }
 
-	~File() {
-		std::cout << "File Destructor" << std::endl;
-		close(); // 此时子类已析构
-	}
+    ~File()
+    {
+        std::cout << "File Destructor" << std::endl;
+        close(); // 此时子类已析构
+    }
 };
 
 class SubFile : File
 {
-	void open() override { std::cout << " SubFile open" << std::endl; };
-	void close() override { std::cout << " SubFile close" << std::endl; };
+    void open() override { std::cout << " SubFile open" << std::endl; };
+    void close() override { std::cout << " SubFile close" << std::endl; };
 };

@@ -1,19 +1,19 @@
-#include "pch.h"
 #include "initializer_list.h"
 
-
-
-
-// ½«³õÊ¼»¯ÁĞ±íµÄ¸ÅÄî°ó¶¨µ½ÀàĞÍÉÏ£¬²¢³ÆÖ®Îªinitializer_list£¬
-// ÔÊĞí¹¹Ôìº¯Êı¼°ÆäËüº¯ÊıÏñ ²ÎÊıÒ»Ñù³õÊ¼»¯ÁĞ±í
+// å°†åˆå§‹åŒ–åˆ—è¡¨çš„æ¦‚å¿µç»‘å®šåˆ°ç±»å‹ä¸Šï¼Œå¹¶ç§°ä¹‹ä¸ºinitializer_listï¼Œ
+// å…è®¸æ„é€ å‡½æ•°åŠå…¶å®ƒå‡½æ•°åƒ å‚æ•°ä¸€æ ·åˆå§‹åŒ–åˆ—è¡¨
 void test_initializer_list()
 {
-	int arr[3] = { 1, 2, 3 };
-	std::vector<int> vec = { 1, 2, 3, };
+    int              arr[3] = {1, 2, 3};
+    std::vector<int> vec    = {
+        1,
+        2,
+        3,
+    };
 
-	Fool foo1(1, 2);
-	Fool foo2{ 1, 2 };
+    Fool foo1(1, 2);
+    Fool foo2{1, 2};
 
-	MagicFool magicFoo1 = { 1, 2, 3 };
-	MagicFool magicFoo2{ 3,4 };
+    MagicFool magicFoo1 = {1, 2, 3};
+    MagicFool magicFoo2{3, 4};
 }

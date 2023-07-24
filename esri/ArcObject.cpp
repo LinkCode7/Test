@@ -1,11 +1,11 @@
-#include "pch.h"
+
 //#include "ArcObject.h"
 ////#include "ogrsf_frmts.h"
-//using namespace std;
+// using namespace std;
 //
 //
 //#ifdef USE_ESRI
-//void testQueryDef(const IQueryDefPtr& ipQueryDef)
+// void testQueryDef(const IQueryDefPtr& ipQueryDef)
 //{
 //	CComBSTR subFields;
 //	ipQueryDef->get_SubFields(&subFields);
@@ -35,7 +35,7 @@
 //
 //
 //
-//void testObject()
+// void testObject()
 //{
 //	//IWorkspaceFactoryPtr ipWorkspaceFactory(CLSID_ShapefileWorkspaceFactory);
 //	//IWorkspacePtr ipWorkspace;
@@ -47,7 +47,8 @@
 //	//ipFeatureWorkspace->OpenFeatureClass(L"hydro",&ipFeatureClass);
 //
 //	//CComBSTR fullQualifiedName;
-//	//ISQLSyntaxPtr(ipFeatureWorkspace)->QualifyTableName(CComBSTR(L"testData_Vietmap"), CComBSTR(L"testData_Vietmap"), CComBSTR(L"hydro"), &fullQualifiedName);
+//	//ISQLSyntaxPtr(ipFeatureWorkspace)->QualifyTableName(CComBSTR(L"testData_Vietmap"), CComBSTR(L"testData_Vietmap"),
+//CComBSTR(L"hydro"), &fullQualifiedName);
 //
 //	//IFeatureClassNamePtr ipFeatureClassName(CLSID_FeatureClassName);
 //

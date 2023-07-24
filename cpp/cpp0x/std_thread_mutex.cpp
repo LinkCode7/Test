@@ -4,7 +4,6 @@
 #include <iostream>
 #include <mutex>
 
-#include "pch.h"
 #include "std_thread.h"
 
 using namespace std;

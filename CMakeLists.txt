@@ -22,7 +22,6 @@ add_compile_definitions(TEST_BOOST_RTREE)
 endif()
 
 # 工程文件
-include_directories(.) # pch.h
 aux_source_directory(./ SRCS)
 aux_source_directory(./algorithm SRCS)
 aux_source_directory(./boost SRCS)
@@ -50,3 +49,7 @@ add_executable(${PROJECT_NAME} ${SRCS})
 if(TEST_BOOST_RTREE)
 target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
 endif()
+
+# 预编译头
+include_directories(.)
+target_precompile_headers(${PROJECT_NAME} PRIVATE "$<$<COMPILE_LANGUAGE:CXX>:./pch.h>")

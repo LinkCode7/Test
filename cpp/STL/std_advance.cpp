@@ -1,62 +1,57 @@
-#include "pch.h"
 #include "std_advance.h"
 
 using namespace std;
 
-template<class InputIterator, class Distance>
+template <class InputIterator, class Distance>
 void advance_II(InputIterator it, Distance n)
 {
-	// µ¥Ïò£¬ÖğÒ»Ç°½ø
-	while (n--) ++it;
+    // å•å‘ï¼Œé€ä¸€å‰è¿›
+    while (n--)
+        ++it;
 }
 
-template<class BidIrectionalIterator, class Distance>
+template <class BidIrectionalIterator, class Distance>
 void advance_BI(BidIrectionalIterator it, Distance n)
 {
-	// Ë«Ïò£¬ÖğÒ»Ç°½ø
-	if (n >= 0)
-		while (n--) ++it;
-	else
-		while (n++) --it;
+    // åŒå‘ï¼Œé€ä¸€å‰è¿›
+    if (n >= 0)
+        while (n--)
+            ++it;
+    else
+        while (n++)
+            --it;
 }
 
-template<class RandomAccessIterator, class Distance>
+template <class RandomAccessIterator, class Distance>
 void advance_RAI(RandomAccessIterator it, Distance n)
 {
-	// Ë«Ïò£¬ÌøÔ¾Ç°½ø
-	it += n;
+    // åŒå‘ï¼Œè·³è·ƒå‰è¿›
+    it += n;
 }
 
 ////////////////////////////////////////////////////////////////////
-// Ñ¡Ôñ²»Í¬Ğ§ÂÊµÄ°æ±¾£¿
+// é€‰æ‹©ä¸åŒæ•ˆç‡çš„ç‰ˆæœ¬ï¼Ÿ
 
-// ÔËĞĞÆÚ¼äÑ¡Ôñ£º
-template<class InputIterator, class Distance>
+// è¿è¡ŒæœŸé—´é€‰æ‹©ï¼š
+template <class InputIterator, class Distance>
 void Advance(InputIterator i, Distance n)
 {
-	//if (isRandomAccessIterator(i)) // ´ıÊµÏÖ
-	//	advance_RAI(it, n);
-	//else if(isBidIrectionalIterator(i)) // ´ıÊµÏÖ
-	//	advance_BI(it, n);
-	//else
-	//	advance_II(it, n);
+    // if (isRandomAccessIterator(i)) // å¾…å®ç°
+    //	advance_RAI(it, n);
+    // else if(isBidIrectionalIterator(i)) // å¾…å®ç°
+    //	advance_BI(it, n);
+    // else
+    //	advance_II(it, n);
 }
 
-// ¸üĞ§ÂÊµÄ·½Ê½£º±àÒëÆÚÑ¡Ôñ£¨º¯ÊıÖØÔØ£©
-// void advance(InputIterator i, Distance n£¬ClassType)
-
-
-
-
-
-
-
+// æ›´æ•ˆç‡çš„æ–¹å¼ï¼šç¼–è¯‘æœŸé€‰æ‹©ï¼ˆå‡½æ•°é‡è½½ï¼‰
+// void advance(InputIterator i, Distance nï¼ŒClassType)
 
 void testAdvance()
 {
-	////vector<int> vec = {1,2,3};
-	//int p[] = {1,2,3};
-	//auto itr = p;
+    ////vector<int> vec = {1,2,3};
+    // int p[] = {1,2,3};
+    // auto itr = p;
 
-	//MyAdvance(itr,1);
+    // MyAdvance(itr,1);
 }

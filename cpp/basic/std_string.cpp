@@ -1,22 +1,22 @@
-#include "pch.h"
 #include "std_string.h"
-#include <map>
-#include <iostream>
+
 #include <cassert>
+#include <iostream>
+#include <map>
 
 using namespace std;
 
 TEST(std_string, NoCaseWString)
 {
-	map<std::string, int> mapDatas = { { "a",1 },{ "CC",3 } };
-	assert(mapDatas.find("A") == mapDatas.end());
+    map<std::string, int> mapDatas = {{"a", 1}, {"CC", 3}};
+    assert(mapDatas.find("A") == mapDatas.end());
 
-	// 条款2-3 不区分大小写的string
-	string str = "a";
-	assert(str != "A");
+    // 条款2-3 不区分大小写的string
+    string str = "a";
+    assert(str != "A");
 
-	my_string myStr = "a";
-	assert(myStr == "A");
+    my_string myStr = "a";
+    assert(myStr == "A");
 }
 
 /*
@@ -53,29 +53,29 @@ int find_last_not_of(const string &s,int pos = npos) const;
 */
 TEST(std_string, BasicString)
 {
-	string str("aa.txt");
-	auto pos = str.find(".txt");
-	assert(pos == 2);
+    string str("aa.txt");
+    auto   pos = str.find(".txt");
+    assert(pos == 2);
 }
 
 TEST(std_string, substr)
 {
-	string str(u8"");
-	assert(str.substr(0, str.size() - 1) == u8"");
+    string str(u8"");
+    assert(str.substr(0, str.size() - 1) == u8"");
 
-	str = u8"-";
-	assert(str.substr(0, str.size() - 1) == u8"");
-	str.pop_back();
-	assert(str == u8"");
+    str = u8"-";
+    assert(str.substr(0, str.size() - 1) == u8"");
+    str.pop_back();
+    assert(str == u8"");
 
-	// 单个字符占的字节数大于1
-	str = u8"中国";
-	auto sub = str.substr(0, str.size() - 1); // 无效字符串
+    // 单个字符占的字节数大于1
+    str      = u8"中国";
+    auto sub = str.substr(0, str.size() - 1); // 无效字符串
 
-	const char ch = '国';
+    const char ch = '国';
 
-	str.erase(str.end() - 1); // 无效字符串
+    str.erase(str.end() - 1); // 无效字符串
 
-	str = u8"中国";
-	str.pop_back(); // 无效字符串
+    str = u8"中国";
+    str.pop_back(); // 无效字符串
 }

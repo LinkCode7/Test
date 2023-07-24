@@ -3,8 +3,6 @@
 #include <iostream>
 #include <sstream>
 
-#include "pch.h"
-
 TEST(date_time, time_t)
 {
     time_t     t   = time(nullptr);

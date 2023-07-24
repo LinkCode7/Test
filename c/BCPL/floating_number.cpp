@@ -2,8 +2,6 @@
 
 #include <cassert>
 
-#include "pch.h"
-
 using std::cout;
 using std::endl;
 
