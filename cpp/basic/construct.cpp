@@ -9,6 +9,10 @@ TEST(Construct, CppClass)
 
     // error C2248 : “SimpleObject::operator new” : 无法访问 private 成员
     // SimpleObject* pSimpleObject = new SimpleObject;
+
+    TestCppConstruct object1(1, 1, 1);
+    TestCppConstruct object2(2, 2, 2);
+    // object1 = object2;
 }
 
 TEST(Construct, DeepClone)

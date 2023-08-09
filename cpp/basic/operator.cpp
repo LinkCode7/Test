@@ -7,7 +7,6 @@ void testOperator1()
     bool        isTrue    = Read();
 
     testCppOperator();
-    testCompareSharedPtr();
     testSortPointer();
 }
 
@@ -23,7 +22,7 @@ void testCppOperator()
     object5          = 0.5;     // MyObject(double value),operator=
 }
 
-void testCompareSharedPtr()
+TEST(std_sort, compare_shared_pointer)
 {
     MyObjectPtr p1 = std::make_shared<MyObject>(1);
     MyObjectPtr p3 = std::make_shared<MyObject>(3);
