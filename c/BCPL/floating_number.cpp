@@ -183,3 +183,10 @@ TEST(floating, rounding)
             -5.5    -6.0    -6.0    -5.0    -5.0
     */
 }
+
+// NaN(Not a Number)是一个特殊的数值，isnan()判断非数字值的特殊值
+TEST(floating, isnan)
+{
+    double value = std::numeric_limits<double>::quiet_NaN();
+    EXPECT_TRUE(isnan(value));
+}

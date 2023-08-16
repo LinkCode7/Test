@@ -1,24 +1,23 @@
 //#include "xtest.h" // xtest.h在预编译头中包含了，这里再包含的话会重复
-#include "windows.h"
 
 xtest::_Test::_Test(const std::string& n1, const std::string& n2) : test_case_name(n1), test_name(n2)
 {
 }
 
-void Output(const char* str, unsigned short color)
-{
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | color);
-    std::cout << str;
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
-}
-
+// std::cout << "\033[0;31m红色文字\033[0m" << std::endl;
+// std::cout << "\033[0;32m绿色文字\033[0m" << std::endl;
+// std::cout << "\033[0;33m黄色文字\033[0m" << std::endl;
+// std::cout << "\033[0;34m蓝色文字\033[0m" << std::endl;
+// std::cout << "\033[0;35m紫色文字\033[0m" << std::endl;
+// std::cout << "\033[0;36m青色文字\033[0m" << std::endl;
+// std::cout << "\033[0;37m白色文字\033[0m" << std::endl;
 void xtest::OutputRed(const std::string& str)
 {
-    Output(str.c_str(), FOREGROUND_RED);
+    std::cout << "\033[0;31m" + str + "\033[0m";
 }
 void xtest::OutputGreen(const std::string& str)
 {
-    Output(str.c_str(), FOREGROUND_GREEN);
+    std::cout << "\033[0;32m" + str + "\033[0m";
 }
 
 void xtest::UnitTest::Run()
