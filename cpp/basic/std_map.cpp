@@ -32,8 +32,8 @@ TEST(std_map, access)
     {
         /*
          * "非只读的operator[]"一定会修改map的second，不存在key时会插入一个新的
-         * 两种写法："mapInt2Int[first] = second;" 和 "if (auto iter = mapInt2Int.find(first); iter == mapInt2Int.end()) mapInt2Int[first] =
-         * second;" 后者不会强制插入key，只有存在key时才更新value，避免不必要键值对
+         * 两种写法："mapInt2Int[first] = second;" 和 "if (auto iter = mapInt2Int.find(first); iter == mapInt2Int.end())
+         * mapInt2Int[first] = second;" 后者不会强制插入key，只有存在key时才更新value，避免不必要键值对
          */
         mapInt2Int[2] = -22;
         assert(compareExistValueInMap(mapInt2Int, 2, -22));
@@ -58,7 +58,8 @@ TEST(std_map, access)
         assert(pObject == nullptr);
     }
     {
-        map<int, AccessStdMapTestPtr> mapInt2Ptr = {{1, std::make_shared<AccessStdMapTest>()}, {2, std::make_shared<AccessStdMapTest>()}};
+        map<int, AccessStdMapTestPtr> mapInt2Ptr = {{1, std::make_shared<AccessStdMapTest>()},
+                                                    {2, std::make_shared<AccessStdMapTest>()}};
         std::cout << ">>> get not exist value in mapInt2Ptr:" << std::endl;
         const AccessStdMapTestPtr& pObject = mapInt2Ptr[0];
         assert(pObject == nullptr);
@@ -76,6 +77,10 @@ TEST(std_map, access)
 
 TEST(std_map, emplace)
 {
+    std::map<int, std::unique_ptr<std::string>> my_map;
+    my_map.emplace(1, std::make_unique<std::string>("good"));
+    my_map[1] = std::make_unique<std::string>("leak");
+
     map<int, int> mapInt2Int = {{1, 11}, {2, 22}};
     auto          size       = mapInt2Int.size();
 
