@@ -40,6 +40,8 @@ TEST(multibyte, u32string)
             break;
     }
 
+    std::cout << std::dec;
+
     std::string    strUtf8 = "123";
     std::u32string strU32(strUtf8.begin(), strUtf8.end()); // U"..."
     std::cout << strU32.c_str() << std::endl;

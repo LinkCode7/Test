@@ -114,10 +114,11 @@ void TestSizeOf::VPtrTest::Test()
 
     // VS2015:前四个字节的地址是相同的，vptr放在了class内存区域的头部
     p = reinterpret_cast<unsigned long*>(&hv1);
-    cout << "first 4bytes of hv1: 0x" << hex << p[0] << endl;
+    cout << "first 4bytes of hv1: 0x" << std::hex << p[0] << endl;
 
     p = reinterpret_cast<unsigned long*>(&hv2);
-    cout << "first 4bytes of hv2: 0x" << hex << p[0] << endl;
+    cout << "first 4bytes of hv2: 0x" << std::hex << p[0] << endl;
+    std::cout << std::dec;
 
     //
     TestNotAboutSizeOf();
